@@ -143,18 +143,16 @@ const ExitFullscreenIcon = () => (
 
 function App() {
   const [mermaidCode, setMermaidCode] = useState(`
-graph TD
-    Router --> VideoProvider
-    VideoProvider --> AnalysisProvider
-    AnalysisProvider --> Dashboard.js
-    AnalysisProvider --> SingleVideoAnalysis.js
-    AnalysisProvider --> VideoComparison.js
-    AnalysisProvider --> Settings.js
-    SingleVideoAnalysis.js --> SideBySideView.js
-    VideoContext.js --- Dashboard.js
-    VideoContext.js --- SingleVideoAnalysis.js
-    VideoContext.js --- SideBySideView.js
-    AnalysisContext.js --- Dashboard.js
+graph
+    sample_A --> sample_1
+    sample_B --> sample_2
+    sample_C --> sample_2
+    sample_C --> sample_3
+
+    subgraph SAMPLE
+      Subgraph_A --> Subgraph_1
+      Subgraph_B --> Subgraph_1
+    end
   `);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
